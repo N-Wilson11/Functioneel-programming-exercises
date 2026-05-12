@@ -71,7 +71,11 @@ let parseIndex (input: string) : TripleIndex option =
     | "3" | "third"  -> Some Third
     | _              -> None
 
-let rec gameLoop (board: Board) (currentPlayer: Square) : unit =
+//let squareIsEmpty (b: Board) (squareIndex: TripleIndex) (rowIndex: TripleIndex) : bool =
+    
+    
+
+let rec gameLoop (board: Board) (currentPlayer: Square) (counterP1: int) (counterP2: int) : unit =
     drawBoard board
     let playerStr = if currentPlayer = Cross then "X" else "O"
     printfn "Player %s's turn" playerStr
@@ -79,16 +83,31 @@ let rec gameLoop (board: Board) (currentPlayer: Square) : unit =
     let rowInput = System.Console.ReadLine()
     printf "Enter column (1/2/3): "
     let colInput = System.Console.ReadLine()
+
+   
+
     match parseIndex rowInput, parseIndex colInput with
     | Some row, Some col ->
         let newBoard = updateSquareOfBoard board col row currentPlayer
-        let nextPlayer = if currentPlayer = Cross then Nought else Cross
-        gameLoop newBoard nextPlayer
+        let newCounterP1 = if currentPlayer = Cross then counterP1 + 1 else counterP1
+        let newCounterP2 = if currentPlayer = Nought then counterP2 + 1 else counterP2
+        if currentPlayer = Cross && newCounterP1 = 3 then
+            printfn "Counter: %d" newCounterP1
+            printfn "Player X wins!"
+            drawBoard newBoard
+        else if currentPlayer = Nought && newCounterP2 = 3 then
+            printfn "Counter: %d" newCounterP2
+            printfn "Player O wins!"
+            drawBoard newBoard
+        else
+            printfn "Counter: %d" (if currentPlayer = Cross then newCounterP1 else newCounterP2)
+            let nextPlayer = if currentPlayer = Cross then Nought else Cross
+            gameLoop newBoard nextPlayer newCounterP1 newCounterP2
     | _ ->
         printfn "Ongeldige invoer, probeer opnieuw."
-        gameLoop board currentPlayer
+        gameLoop board currentPlayer counterP1 counterP2
 
-gameLoop emptyBoard Cross
+gameLoop emptyBoard Cross 0 0
 
 
 

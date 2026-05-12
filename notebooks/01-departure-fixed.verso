@@ -25,7 +25,15 @@
       "id": "61d84d36-206e-48fd-ab47-e68df0152478",
       "type": "code",
       "language": "csharp",
-      "source": "public class Person\n{\n    private int _age;\n    public int Age\n    {\n        get =\u003E _age;\n        set\n        {\n            if (value \u003C 0)\n                throw new ArgumentOutOfRangeException(nameof(Age), $\u0022A person\u2019s age cannot be negative\u0022);\n            _age = value;\n        }\n    }\n    private string _name;\n    public string Name\n    {\n        get =\u003E _name;\n        set\n        {\n            if (value.Length \u003C= 0)\n                throw new ArgumenException(nameof(Name), $\u0022A person\u2019s name cannot be empty\u0022);\n            _name = value;\n        }\n  \n    }\n\n    public Person(string name, int age)\n    {\n        if (name.Length == 0)\n        {\n            throw new ArgumentException(\n                nameof(name),\n                \u0022cannot be empty\u0022);\n        }\n        if (age \u003C 0)\n        {\n            throw new ArgumentOutOfRangeException(\n                nameof(age),\n                \u0022cannot be negative\u0022);\n        }\n        _name = name;\n        _age = age;\n    }\n}"
+      "source": "public class Person\n{\n    private int _age;\n    public int Age\n    {\n        get =\u003E _age;\n        set\n        {\n            if (value \u003C 0)\n                throw new ArgumentOutOfRangeException(nameof(Age), $\u0022A person\u2019s age cannot be negative\u0022);\n            _age = value;\n        }\n    }\n    private string _name;\n    public string Name\n    {\n        get =\u003E _name;\n        set\n        {\n            if (value.Length \u003C= 0)\n                throw new ArgumenException(nameof(Name), $\u0022A person\u2019s name cannot be empty\u0022);\n            _name = value;\n        }\n  \n    }\n\n    public Person(string name, int age)\n    {\n        if (name.Length == 0)\n        {\n            throw new ArgumentException(\n                nameof(name),\n                \u0022cannot be empty\u0022);\n        }\n        if (age \u003C 0)\n        {\n            throw new ArgumentOutOfRangeException(\n                nameof(age),\n                \u0022cannot be negative\u0022);\n        }\n        _name = name;\n        _age = age;\n    }\n}",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "(21,27): error CS0246: The type or namespace name \u0027ArgumenException\u0027 could not be found (are you missing a using directive or an assembly reference?)",
+          "isError": true,
+          "errorName": "CompilationError"
+        }
+      ]
     },
     {
       "id": "7035dbfc-d59c-4be5-9dac-0cb26b511930",
@@ -79,7 +87,7 @@
       "outputs": [
         {
           "mimeType": "text/plain",
-          "content": "Hello world!\r\n"
+          "content": "Hello world!m\r\n"
         }
       ]
     },
