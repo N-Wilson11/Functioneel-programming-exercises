@@ -44,12 +44,55 @@ let squareToString(s: Square) : string =
     | Cross -> "X"
     | Nought -> "O"
 
-let square = Cross
-let row = (squareToString square, squareToString Empty, squareToString Empty)
-let board = (row, row, row)
+let drawRow(r: Row) : string =
+    let s1, s2, s3 = r
+    sprintf " %s | %s | %s " (squareToString s1) (squareToString s2) (squareToString s3)
+
+let drawBoard(b: Board) : unit =
+    let r1, r2, r3 = b
+    printfn "\n"
+    printfn "%s" (drawRow r1)
+    printfn "-----------"
+    printfn "%s" (drawRow r2)
+    printfn "-----------"
+    printfn "%s" (drawRow r3)
+    printfn "\n"
+
+let emptyBoard = (
+    (Empty, Empty, Empty),
+    (Empty, Empty, Empty),
+    (Empty, Empty, Empty)
+)
+
+let parseIndex (input: string) : TripleIndex option =
+    match input.Trim().ToLower() with
+    | "1" | "first"  -> Some First
+    | "2" | "second" -> Some Second
+    | "3" | "third"  -> Some Third
+    | _              -> None
+
+let rec gameLoop (board: Board) (currentPlayer: Square) : unit =
+    drawBoard board
+    let playerStr = if currentPlayer = Cross then "X" else "O"
+    printfn "Player %s's turn" playerStr
+    printf "Enter row (1/2/3): "
+    let rowInput = System.Console.ReadLine()
+    printf "Enter column (1/2/3): "
+    let colInput = System.Console.ReadLine()
+    match parseIndex rowInput, parseIndex colInput with
+    | Some row, Some col ->
+        let newBoard = updateSquareOfBoard board col row currentPlayer
+        let nextPlayer = if currentPlayer = Cross then Nought else Cross
+        gameLoop newBoard nextPlayer
+    | _ ->
+        printfn "Ongeldige invoer, probeer opnieuw."
+        gameLoop board currentPlayer
+
+gameLoop emptyBoard Cross
 
 
-printfn "%A\n" board
+
+
 
 
 
