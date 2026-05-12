@@ -1,0 +1,358 @@
+{
+  "verso": "1.0",
+  "metadata": {
+    "defaultKernel": "csharp",
+    "activeLayout": "notebook"
+  },
+  "cells": [
+    {
+      "id": "07cedd79-c743-43d3-996a-2ee9c3e40598",
+      "type": "markdown",
+      "source": "Listing 1: An imperative program that finds the average value of an\narray."
+    },
+    {
+      "id": "f7212f3f-43a2-47fd-a8be-14f7f90603d9",
+      "type": "code",
+      "language": "csharp",
+      "source": "double Average(double[] array)\n{\n    double sum = 0.0;\n    double length = 0.0;\n    foreach (var value in array)\n    {\n        sum \u002B= value;\n        length \u002B= 1.0;\n    }\n    return sum / length;\n}"
+    },
+    {
+      "id": "0ed646d7-2bdf-413e-b1a3-faf36a885aab",
+      "type": "markdown",
+      "source": "Listing 2: A \u0060Person\u0060 class that maintains two invariants: age is\nnonnegative, name is not empty."
+    },
+    {
+      "id": "61d84d36-206e-48fd-ab47-e68df0152478",
+      "type": "code",
+      "language": "csharp",
+      "source": "public class Person\n{\n    private int _age;\n    public int Age\n    {\n        get =\u003E _age;\n        set\n        {\n            if (value \u003C 0)\n                throw new ArgumentOutOfRangeException(nameof(Age), $\u0022A person\u2019s age cannot be negative\u0022);\n            _age = value;\n        }\n    }\n    private string _name;\n    public string Name\n    {\n        get =\u003E _name;\n        set\n        {\n            if (value.Length \u003C= 0)\n                throw new ArgumenException(nameof(Name), $\u0022A person\u2019s name cannot be empty\u0022);\n            _name = value;\n        }\n  \n    }\n\n    public Person(string name, int age)\n    {\n        if (name.Length == 0)\n        {\n            throw new ArgumentException(\n                nameof(name),\n                \u0022cannot be empty\u0022);\n        }\n        if (age \u003C 0)\n        {\n            throw new ArgumentOutOfRangeException(\n                nameof(age),\n                \u0022cannot be negative\u0022);\n        }\n        _name = name;\n        _age = age;\n    }\n}"
+    },
+    {
+      "id": "7035dbfc-d59c-4be5-9dac-0cb26b511930",
+      "type": "markdown",
+      "source": "Listing 4: A sample program in C# with the implementation of \u0060SendCard\u0060\nomitted."
+    },
+    {
+      "id": "c232119a-d100-499f-be4b-0df85df7d8cd",
+      "type": "code",
+      "language": "csharp",
+      "source": "// the keyword in prevents SendCard from\n// assigning to p: p = new Person(...) is disallowed.\nvoid SendCard(in Person p)\n{\n/* \u2026 */\n}\n\n\nPerson p = new Person(\u0022Eleanor\u0022, 22);\nSendCard(p);"
+    },
+    {
+      "id": "1a7942df-df69-4cdf-be75-6eba75ab856a",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n**Exercise 1** What do you know about the values for \u0060Name\u0060 and \u0060Age\u0060\nafter \u0060SendCard\u0060 has finished?\n\n1.  They are unchanged because \u0060SendCard\u0060 cannot assign to \u0060p\u0060 as the\n    parameter is declared \u0060in\u0060.\n2.  They are unchanged because \u0060SendCard\u0060 should not change the\n    attributes of \u0060p\u0060\n3.  They may change. However, name will still be nonempty and age will\n    not be negative.\n4.  We cannot tell"
+    },
+    {
+      "id": "64f621e5-1959-411c-b2c9-8d2dd2d01338",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "555331bb-03b1-4a60-98e9-70c49e0aa91a",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 2** \u0060SendCard\u0060 could have been implemented as in lst.\u00A05. What\ndo you think of this implementation? Can you explain why a designer\nwould implement the method in this way? Would you accept such an\nimplementation during a code review?\n\nListing 5: An implementation of \u0060SendCard\u0060 that not only inspects but\nalso changes a \u0060Person\u0060\u2019s attributes."
+    },
+    {
+      "id": "19a96058-2bb4-46e0-9b00-b5473239988e",
+      "type": "code",
+      "language": "csharp",
+      "source": "void SendCard(in Person p)\n{\n    p.Age \u002B= 1;\n    Console.WriteLine($\u0022{p.Age} years old! \u0022\n        \u002B \u0022Congratulations {p.Name}!\u0022);\n}"
+    },
+    {
+      "id": "f9c67116-7473-42c2-98e0-5b38a869afc9",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "6931fca2-ad4e-4222-95a6-b3ce1ff99801",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\nListing 6: Our first line of F#"
+    },
+    {
+      "id": "d3b591e3-a514-497e-81ba-7a8032c24d99",
+      "type": "code",
+      "language": "fsharp",
+      "source": "printfn \u0022Hello world!\u0022",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "Hello world!\r\n"
+        }
+      ]
+    },
+    {
+      "id": "05a89c4c-dcb7-439b-9597-ffad0af1619d",
+      "type": "markdown",
+      "source": "Listing 7: An immutable \u0060Person\u0060 class. Attributes are set at\nconstruction time. State can only be updated via the creation of new\nobjects."
+    },
+    {
+      "id": "cca5af96-0969-4a50-bdbf-b907b894df81",
+      "type": "code",
+      "language": "csharp",
+      "source": "class Person {\n    private int _age;\n    public int Age { get =\u003E _age; }\n\n    private string _name;\n    public string Name { get =\u003E _name; }\n\n    public Person(string name, int age)\n    {\n        if (name.Length == 0)\n            throw new ArgumentOutOfRangeException(nameof(name),\n                                                  \u0022cannot be empty\u0022);\n        if (age \u003C 0)\n            throw new ArgumentOutOfRangeException(nameof(age),\n                                                  \u0022cannot be negative\u0022);\n        _name = name;\n        _age = age;\n    }\n}\n\nPerson SetAge(Person p, int age) {\n    if (age \u003C 0){\n        return p;\n    }\n    return new Person(p.Name, age);\n}\n\nvar p = new Person(\u0022Eleanor\u0022, 22);\nvar p2 = SetAge(p, 23);\nConsole.WriteLine($\u0022p.Age = {p.Age}\u0022)\nConsole.WriteLine($\u0022p2.Age = {p2.Age}\u0022)"
+    },
+    {
+      "id": "ac60ad21-981b-4635-b374-efcb9fabcec2",
+      "type": "markdown",
+      "source": "Listing 8: Binding variables"
+    },
+    {
+      "id": "13ad9511-e937-4a87-8e46-d7e7062ad8c4",
+      "type": "code",
+      "language": "csharp",
+      "source": "let a = 5\nlet s = \u0022abc\u0022"
+    },
+    {
+      "id": "9365e713-1689-4be3-be5a-4acaaf500fc9",
+      "type": "markdown",
+      "source": "Listing 9: Using variables to build larger expressions"
+    },
+    {
+      "id": "7e43b317-64c8-43a0-884f-1ae2b437e139",
+      "type": "code",
+      "language": "csharp",
+      "source": "let b = a \u002B 1 // a \u002B 1 is an expression"
+    },
+    {
+      "id": "0fc7be0b-0b2b-40b8-ba2c-ca902f2237e4",
+      "type": "markdown",
+      "source": "Listing 10: f is defined to be a function of a single argument x. f\nreturns to x \u002B 1"
+    },
+    {
+      "id": "6c16b0d5-6821-474c-a0ea-c4fe6b633023",
+      "type": "code",
+      "language": "csharp",
+      "source": "let f x = x \u002B 1"
+    },
+    {
+      "id": "add4cebd-7428-4321-9a5c-3857941df0bb",
+      "type": "markdown",
+      "source": "Listing 11: \u0060f\u0060 is applied to the argument 2"
+    },
+    {
+      "id": "518621b7-d012-4a0a-af5f-1a244446d615",
+      "type": "code",
+      "language": "csharp",
+      "source": "f 2"
+    },
+    {
+      "id": "c09899ce-486b-4425-8a03-4e80635d1edf",
+      "type": "markdown",
+      "source": "Listing 12: A binary function takes two arguments"
+    },
+    {
+      "id": "46f80673-50e0-4147-920e-dbe886431caa",
+      "type": "code",
+      "language": "csharp",
+      "source": "let add a b = a \u002B b"
+    },
+    {
+      "id": "6d91b64e-a860-4c9d-9e60-5aa481a32732",
+      "type": "markdown",
+      "source": "Listing 13: Applying a binary function to two arguments. Note that the\nfunction and arguments are separated by spaces."
+    },
+    {
+      "id": "e8f39470-87a5-4059-ab17-b0d792e31d1b",
+      "type": "code",
+      "language": "csharp",
+      "source": "add 1 2 // 3"
+    },
+    {
+      "id": "f7e7f188-de67-4d9f-93e7-d3bfe8da9f09",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n**Exercise 3** In the code cell below, calculate the sum of 1337 and 42."
+    },
+    {
+      "id": "566f3409-49bd-4195-9948-08ab213d19a6",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "285a4ed0-7beb-4337-86e9-651ebcff82c4",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 4** Instead of passing \u0060add\u0060 two values, pass it a value\n\u00601337\u0060 and the expression \u00606 * 7\u0060. This time you will need to add\nparentheses."
+    },
+    {
+      "id": "fffae3fd-f87f-486b-8b27-a2d5d26a245b",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "5654066e-5cfc-4c36-a5b4-b48314e656df",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\nListing 14: The behaviour of Add depends not only on the values for a\nand b."
+    },
+    {
+      "id": "d8c7ff18-d670-4306-b197-19acf1efc36a",
+      "type": "code",
+      "language": "csharp",
+      "source": "int called = 0;\n\nint Add(int a, int b) {\n    int sum = a \u002B b;\n\n    sum \u002B= called;\n    \n    called\u002B\u002B; // change state\n\n    Console.WriteLine(\u0022Result is {0}.\u0022, sum); // perform I/O\n    return sum;\n}\n\nConsole.WriteLine(Add(1,2)); // 3\nConsole.WriteLine(Add(1,2)); // 4!"
+    },
+    {
+      "id": "2febad48-cd0d-425c-8ff7-fcad08c71bd1",
+      "type": "markdown",
+      "source": "Listing 15: Method Add3 should calculate the sum of three arguments."
+    },
+    {
+      "id": "5190e43c-eac5-45eb-addd-ea377057b01e",
+      "type": "code",
+      "language": "csharp",
+      "source": "int Add3(int a, int b, int c)\n{\n    // something here\n}"
+    },
+    {
+      "id": "d0a5ba2e-9245-46ea-9fe8-22741d1ac362",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n**Exercise 5** Inspect the code below but do not run it yet. Answer the\nfollowing two questions:\n\n1.  What is the result of \u0060Add3(1,2,3)\u0060?\n2.  What are the side-effects?\n\nListing 16: An implementation of Add3."
+    },
+    {
+      "id": "a580acd9-9bcf-42bf-bc96-588b9a02fb4e",
+      "type": "code",
+      "language": "csharp",
+      "source": "int Add3(int a, int b, int c)\n{\n    var sum = Add(Add(a,b),c);\n    \n    // Console.WriteLine(\u0022Result is {0}.\u0022, sum); // potentially\n    \n    return sum;\n}\nAdd3(1,2,3); // not 6!"
+    },
+    {
+      "id": "a9a82a84-5b58-4505-966a-22d09267f397",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "29500a26-1691-40d1-ba74-c6775e0be61d",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 6** What happens if you run the code cell again?\n\n1.  Will the result of \u0060Add3(1,2,3)\u0060 change?\n2.  What about the side-effects?"
+    },
+    {
+      "id": "104a8fab-48f6-4b5d-8b39-1fb0eee32507",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "5d347fd7-3232-4b0c-b38d-5188cc3a80f7",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\nListing 17: The add3 function defined in F#"
+    },
+    {
+      "id": "aae821b0-0881-480a-839a-1ce93c4da443",
+      "type": "code",
+      "language": "csharp",
+      "source": "// remember that add was defined earlier\nlet add3 a b c =\n    let sum = add (add a b) c\n    Console.WriteLine(\u0022Result is {0}.\u0022, sum)\n    sum"
+    },
+    {
+      "id": "1b5b49b8-49d0-4332-86ec-604fe4bfc169",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n**Exercise 7** Define the following terms in your own words:\n\n1.  Encapsulation\n2.  Referential transparency\n3.  Pure function\n4.  Side-effect\n5.  Mutation\n6.  Immutable\n7.  Binding\n8.  Function"
+    },
+    {
+      "id": "617e562f-d3f7-4708-b219-a12832d2783f",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "843376bb-8d97-4869-bd50-b279daf95751",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 8** Determine for the functions in lsts.\u00A018-20, which are\npure and which are not. Motivate your answer.\n\nListing 18: The function randomNumber returns a number between 0 and max"
+    },
+    {
+      "id": "17f20a69-0e5f-450c-88bf-e0e2262f6a84",
+      "type": "code",
+      "language": "csharp",
+      "source": "let randomNumber max  =\n    let r = System.Random()\n    r.Next max"
+    },
+    {
+      "id": "f076ba35-947b-4abe-9c96-52821d7ca819",
+      "type": "markdown",
+      "source": "Listing 19: This time we seed the random number generated with the same\nnumber"
+    },
+    {
+      "id": "21530d7c-bc86-441d-b5c9-c0627abf5498",
+      "type": "code",
+      "language": "csharp",
+      "source": "let randomNumberSeeded max =\n    let r = System.Random(1337)\n    r.Next 10"
+    },
+    {
+      "id": "fec57a04-3ccf-453c-a1ec-8b62fc660390",
+      "type": "markdown",
+      "source": "Listing 20: We log action"
+    },
+    {
+      "id": "4b7e7f7e-0e50-4019-83a9-3c0b6b07ea28",
+      "type": "code",
+      "language": "csharp",
+      "source": "let randomNumberSeededLog max =\n    let r = System.Random(1337)\n    printfn \u0022Bleep... Bloop... Generating number\u0022\n    r.Next 10"
+    },
+    {
+      "id": "4611b7a3-3b84-48c7-a9d6-5a90994f787a",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "a3f6663a-94b0-477c-ad54-059cdc27743c",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 9** Change the class in lst.\u00A021 to be immutable. Provide an\nalternative for users to change objects. Make sure all methods are pure.\nWhat functionality will you have to remove? Why?\n\nListing 21: A mutable class"
+    },
+    {
+      "id": "d071148c-6502-4730-bfdd-b4197e302e70",
+      "type": "code",
+      "language": "csharp",
+      "source": "class Todo\n{\n    private bool _done;\n    public bool Done { get =\u003E _done; }\n    public string Description { get; set; }\n\n    public Todo(string description)\n    {\n        _done = false;\n        Description = description;\n    }\n\n    public void MarkDone()\n    {\n        _done = true;\n        Console.WriteLine($\u0022Done with {Description}\u0022)\n    }\n}"
+    },
+    {
+      "id": "89f1e1e4-24d0-4dca-aa45-1e1d9bfba9a3",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "02ce6278-8b1a-4a43-ac1e-e8e3091c1354",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n*(optional)* **Exercise 10** Typically, todo items are stored in a list.\nIn an object oriented language, it is customary to build a class to\nmanage this list. A programmer claims that lst.\u00A023 is an immutable class\nto manages \u0060Todo\u0060. Do you agree with this assessment? Explain your\nanswer.\n\n**Hint:** Feel free to create instances of TodoLists, add items and mark\nthem as done. Use the \u0060ShowList\u0060-method to inspect their state.\n\nListing 23: Is this an immutable todo list?"
+    },
+    {
+      "id": "5b1a0336-d74a-4185-822a-49371943a532",
+      "type": "code",
+      "language": "csharp",
+      "source": "public class TodoList\n{\n    private List\u003CTodo\u003E todos;\n\n    public int Count =\u003E todos.Count;\n\n    public TodoList()\n    {\n        todos = new List\u003CTodo\u003E();\n    }\n\n    private TodoList(List\u003CTodo\u003E items)\n    {\n        todos = items;\n    }\n\n\n    public TodoList Add(Todo item)\n    {\n        TodoList result = new TodoList(todos);\n        result.todos.Add(item);\n        return result;\n    }\n\n    public TodoList MarkAsDone(Todo item)\n    {\n        TodoList result = new TodoList(todos);\n        var i = result.todos.IndexOf(item);\n        result.todos[i] = new Todo(true, result.todos[i].Description);\n        return result;\n    }\n\n    public Todo Get(int index)\n    {\n        return todos[index];\n    }\n}\n\n\nvoid ShowList(TodoList l)\n{\n    for(var i = 0; i \u003C l.Count; \u002B\u002Bi)\n    {\n        var done = l.Get(i).Done ? \u0027X\u0027 : \u0027 \u0027;\n        Console.WriteLine($\u0022- [${done}] ${l.Get(i).Description}\u0022);\n    }\n}"
+    },
+    {
+      "id": "4ed2a49d-d0c1-48ae-bc2d-828e0f5b3ff5",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "0e790655-1323-47ef-8acf-31cdaa9bace8",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 11** Write a function in F# called \u0060mult\u0060 that multiplies two\nnumbers"
+    },
+    {
+      "id": "bf4a3a1f-c642-42eb-996c-9d3082207c28",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "8d733921-458e-4961-98f3-535b7f691cab",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 12** Without using the multplication operator, write a\nfunction in F# called \u0060mult3\u0060. Any multiplications must be done by\ncalling \u0060mult\u0060."
+    },
+    {
+      "id": "12e5d7d5-72b7-40b5-8a3d-58c06b18c82f",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "6a6c7889-b9a9-4711-b611-e280f7bbd32b",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------"
+    }
+  ]
+}
