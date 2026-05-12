@@ -1,0 +1,517 @@
+{
+  "verso": "1.0",
+  "metadata": {
+    "defaultKernel": "csharp",
+    "activeLayout": "notebook"
+  },
+  "cells": [
+    {
+      "id": "dae9f46d-297e-41de-b8ab-0b361430e0eb",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n**Exercise 1** Which of the languages you used over the last year were\nstrongly typed? Which were weakly typed? Why?"
+    },
+    {
+      "id": "714a596b-01b5-40c5-8c75-56e5c726988e",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "60176ac3-a257-45a3-9ac0-23e629383d39",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 2** Did you ever encounter a situation where a weakly typed\nlanguage affected the correctness of your program?"
+    },
+    {
+      "id": "9ee0b1b2-ae86-442a-950c-3839c73ccc9e",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "3405a359-ea48-415a-94fd-1ee636e53dcb",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 3** For each of the following languages, determine if they\nare statically or dynamically typed.\n\n1.  PHP\n2.  JavaScript\n3.  C#\n4.  C\u002B\u002B\n5.  Scheme\n6.  Java\n7.  Python"
+    },
+    {
+      "id": "bf007a53-45b5-4c30-98b1-c6ffd94ca018",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "cc4cb328-151e-4f34-934a-58d4e51239de",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 4** Take a look at the code below. Based on this fragment, do\nyou think F# is a statically or dynamically typed language?\n\nListing 1: Two variable bindings in F#"
+    },
+    {
+      "id": "4c6d5c5a-da4a-404e-a5f7-6f7b46a96216",
+      "type": "code",
+      "language": "fsharp",
+      "source": "let a = 5\nlet s = \u0022abc\u0022"
+    },
+    {
+      "id": "b02b5abc-68bd-4897-9d46-4b15a9bf2fd3",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "036329cf-bebb-4222-92dd-64b2489c942b",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 5** You have written code in Java, C# and JavaScript. Java\nand C# are statically and more strongly typed than JavaScript, which is\na weakly and dynamically typed language. How does this affect the code\nyou write?"
+    },
+    {
+      "id": "516909d8-8253-4142-9040-60a873e8bea9",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "011d4fef-9270-41f6-b1f8-13fa5843e5d6",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\nListing 2: The successor function bound to \u0060succ\u0060"
+    },
+    {
+      "id": "034551ed-63ba-4afb-9121-e275e9d60771",
+      "type": "code",
+      "language": "csharp",
+      "source": "let succ n = n \u002B 1"
+    },
+    {
+      "id": "2b06d820-e3ec-4086-80c8-18e17fc75dbf",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n**Exercise 6** Run the code below. What is the error message?\n\nListing 3: Adding one to a string"
+    },
+    {
+      "id": "136c8e84-b7aa-48d9-8d92-9fc2ed079c70",
+      "type": "code",
+      "language": "csharp",
+      "source": "printfn \u0022Let\u0027s do something crazy!\u0022\nsucc \u00221\u0022"
+    },
+    {
+      "id": "2c73e246-b6c3-4c5e-9bc3-526fe59be713",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "11aec3b4-06f2-4618-9416-a29f609ec85b",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\nListing 7: An equivalent definition of \u0060succ\u0060 using a lambda literal"
+    },
+    {
+      "id": "eb3d22f3-f9d8-4e03-9b71-06e2c4322fa9",
+      "type": "code",
+      "language": "csharp",
+      "source": "let succ = fun x -\u003E x \u002B 1"
+    },
+    {
+      "id": "87fdd82c-6989-4382-ba1a-816a6bca178d",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n**Exercise 7** Use \u0060let\u0060-bindings and lambda literals to name the\nfollowing functions:\n\n-   \u0060pred\u0060 that takes an \u0060int\u0060 and returns the previous number\n-   \u0060square\u0060 that takes an \u0060int\u0060 and returns its square\n-   \u0060show\u0060 that takes an \u0060int\u0060 and writes it to the console."
+    },
+    {
+      "id": "5627ce87-729e-436c-83b5-cf2e33ee3a47",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "d615bda1-677d-4ec0-8ca9-2f8e4c98fde4",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 8** Can you recall the definitions of unary and arity? If\nnot, look them up. Create flash cards for them."
+    },
+    {
+      "id": "16f53a64-2969-4625-9a8b-c81b6713962f",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "bb49037a-2a51-4b8b-af09-538df86e181b",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\nListing 8: A binary lambda literal"
+    },
+    {
+      "id": "16112654-153c-4759-8214-9600c154bfac",
+      "type": "code",
+      "language": "csharp",
+      "source": "let add a b = a \u002B b"
+    },
+    {
+      "id": "bb79213f-7012-492e-8bed-027c3abb0848",
+      "type": "markdown",
+      "source": "Listing 9: Calling a binary function"
+    },
+    {
+      "id": "6e089904-1204-4886-9a08-740edb7309fe",
+      "type": "code",
+      "language": "csharp",
+      "source": "add 1 2 // 3"
+    },
+    {
+      "id": "c5abad50-2509-4ede-8e6b-559e825150dc",
+      "type": "markdown",
+      "source": "Listing 10: An alternative add function"
+    },
+    {
+      "id": "68bbef05-bc88-430a-b097-f14c2b1a1cce",
+      "type": "code",
+      "language": "csharp",
+      "source": "let addT(a, b) = a \u002B b"
+    },
+    {
+      "id": "b166383a-9bda-44bb-99e1-4fc92082fda8",
+      "type": "markdown",
+      "source": "Listing 11: The same definition now with a space between function name\nand parameter list"
+    },
+    {
+      "id": "1348ee1b-0d3a-432f-89f5-cf8e273515fd",
+      "type": "code",
+      "language": "csharp",
+      "source": "let addT (a,b) = a \u002B b"
+    },
+    {
+      "id": "c83c22db-d348-4ef5-bff6-26a2434e55b7",
+      "type": "markdown",
+      "source": "Listing 12: Calling \u0060addT\u0060"
+    },
+    {
+      "id": "b5d96308-cef2-4bc3-88b1-8081cd0c99d6",
+      "type": "code",
+      "language": "csharp",
+      "source": "let oneAndTwo = (1,2) // create a pair\naddT oneAndTwo"
+    },
+    {
+      "id": "75ef9d08-aab8-451c-bc9f-b0984cdfeaee",
+      "type": "markdown",
+      "source": "Listing 13: A tuple of three components"
+    },
+    {
+      "id": "77caf4be-95a9-4a24-a5b4-c111db6985b7",
+      "type": "code",
+      "language": "csharp",
+      "source": "let t = (\u0022yursav\u0022, 31, true)"
+    },
+    {
+      "id": "54da766f-4075-4a13-902b-164fccf6242e",
+      "type": "markdown",
+      "source": "Listing 14: An entry in a multiplication table in F#"
+    },
+    {
+      "id": "b8688982-4b1b-49b0-b8f8-b0792476631c",
+      "type": "code",
+      "language": "csharp",
+      "source": "let multTable a b = (a, b, a * b)\nmultTable 3 4 // 3 \u00D7 4 = 12"
+    },
+    {
+      "id": "530b70ab-98a4-4244-b483-a002b9010a03",
+      "type": "code",
+      "language": "csharp",
+      "source": "let add3 (a,b) c = a \u002B b \u002B c"
+    },
+    {
+      "id": "33f35ab8-6db4-4092-b248-8a7478a9795c",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n**Exercise 9** Run the following code and hover over \u0060employee\u0060 to see\nits type"
+    },
+    {
+      "id": "0b846aa9-747f-42fe-b9ec-9ed0ddd09a43",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "23e7068d-55f4-4020-bf8f-b380c26d6edc",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\nListing 15: A tuple of two components"
+    },
+    {
+      "id": "9276d8b3-30b8-4828-af95-c3702364f933",
+      "type": "code",
+      "language": "csharp",
+      "source": "let employee = (\u0022yursav\u0022, 1521)"
+    },
+    {
+      "id": "d237b9db-b2f1-44e0-a440-80d40f10394d",
+      "type": "markdown",
+      "source": "Listing 17: Two different functions to add two numbers"
+    },
+    {
+      "id": "e44da331-fec4-4476-ac18-50777d1647c3",
+      "type": "code",
+      "language": "csharp",
+      "source": "let add a b = a \u002B b\nlet addT (a,b) = a \u002B b"
+    },
+    {
+      "id": "68c26f1d-f19b-40b0-b107-997f48b7b181",
+      "type": "markdown",
+      "source": "Listing 18: On the surface it seems we apply \u0060add\u0060 to two arguments"
+    },
+    {
+      "id": "098aecf8-9790-4d03-ba30-ce32249fbfc8",
+      "type": "code",
+      "language": "csharp",
+      "source": "add 1 2"
+    },
+    {
+      "id": "ba3e0cc1-5382-4971-9903-ce39f2a6d326",
+      "type": "markdown",
+      "source": "Listing 19: We are actually applying a single argument *twice*"
+    },
+    {
+      "id": "f36f883f-b672-4e56-a492-868b6f2b0c76",
+      "type": "code",
+      "language": "csharp",
+      "source": "(add 1) 2"
+    },
+    {
+      "id": "1a8d27ef-9f16-44f6-ade7-cf30f1e9aa1f",
+      "type": "markdown",
+      "source": "Listing 22: An alternative definition of \u0060add\u0060 that makes its true\nnature explicit"
+    },
+    {
+      "id": "88a74745-fac6-4225-92ee-ec6f082befeb",
+      "type": "code",
+      "language": "csharp",
+      "source": "let add a = fun b -\u003E a \u002B b"
+    },
+    {
+      "id": "ea8da62f-3858-4b8b-abee-06b30efd9546",
+      "type": "markdown",
+      "source": "Listing 23: \u0060add\u0060 as a nested sequence of unary functions"
+    },
+    {
+      "id": "d31cca75-9568-48c9-8643-9e990cb66d66",
+      "type": "code",
+      "language": "csharp",
+      "source": "let add =\n    fun a -\u003E\n        fun b -\u003E\n            a \u002B b"
+    },
+    {
+      "id": "6456b20c-55d2-497a-a824-cb9a4db1c545",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n**Exercise 10** Add parentheses to make the true nature of the functions\nexplicit:\n\n-   \u0060int -\u003E int -\u003E int\u0060\n-   \u0060int * int -\u003E bool -\u003E string\u0060\n-   \u0060bool -\u003E string -\u003E bool * string\u0060"
+    },
+    {
+      "id": "72f87426-623b-4b5a-a7b9-2ffd742e8993",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "d81cca4a-16a3-4a0a-bc8b-315d14e490f6",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 11** Add parentheses to make the true nature of function\napplication explicit:\n\n-   \u0060f 1 2\u0060\n-   \u0060g (1, 2) \u0022test\u0022\u0060\n-   \u0060makeEmployee 31 \u0022yursav\u0022 true\u0060"
+    },
+    {
+      "id": "9f24627c-0fc0-4658-afe8-c66a33ce14e5",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "e4bb16a1-c946-453e-896c-8cbff6785638",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 12** Make the curried nature of the following functions\nexplicit"
+    },
+    {
+      "id": "19cea4d3-6547-4f61-8db7-8c1d5ec7d265",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "14380c88-7a05-4cfe-ab6e-954cba8949db",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------"
+    },
+    {
+      "id": "e0236cb1-4062-46c2-ab6e-c4b8718f1b30",
+      "type": "code",
+      "language": "csharp",
+      "source": "let createEmployee name age towel = (name, age, towel)"
+    },
+    {
+      "id": "a277a958-193a-47dd-82f3-1c4d9a03b605",
+      "type": "code",
+      "language": "csharp",
+      "source": "let multiply3 a b c = a * b * c"
+    },
+    {
+      "id": "aac7bbbe-a55a-4aa2-89fe-1150cfc02857",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n**Exercise 13** Convert \u0060multiply3\u0060 to its tuple form \u0060multiply3T\u0060"
+    },
+    {
+      "id": "b6304f46-cfcd-4cd5-abe2-52e190d0bcbb",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "2e030507-f5b5-4705-b2aa-285efd824e3d",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\nListing 24: A constructor for contacts"
+    },
+    {
+      "id": "bcf22129-be89-4e3c-8d81-88af532efe5d",
+      "type": "code",
+      "language": "csharp",
+      "source": "// different order in tuple\nlet makeContact org met name = (name, met, org)"
+    },
+    {
+      "id": "54b865d0-a2d0-4c44-8ddb-ba8cf61f7002",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n**Exercise 14** Run the code in lst.\u00A024. Hover your mouse pointer over\nthe name \u0060makeContact\u0060. Observe the type of this function."
+    },
+    {
+      "id": "6f349555-b0bc-4597-a641-871e297b439e",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "eda9636c-4951-4eb1-8d0a-429d386ec31a",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\nListing 26: \u0060areEqual\u0060 is automatically generalised but \u0060x\u0060 and \u0060y\u0060\nshould be of the same type\u2014otherwise they cannot be checked for equality"
+    },
+    {
+      "id": "467bbf2d-f03e-4854-9888-357b068499cc",
+      "type": "code",
+      "language": "csharp",
+      "source": "let areEqual x y = if x = y then \u0022equal\u0022 else \u0022not equal\u0022"
+    },
+    {
+      "id": "2be0287e-77af-459a-97d5-39dee214636a",
+      "type": "markdown",
+      "source": "Listing 28: Calling \u0060areEqual\u0060 with two \u0060int\u0060s or \u0060string\u0060s is fine"
+    },
+    {
+      "id": "11cad190-50de-4613-a3ed-9f6d4e15d5f5",
+      "type": "code",
+      "language": "csharp",
+      "source": "areEqual 1 2\n    // -\u003E \u0022not equal\u0022\nareEqual \u0022one\u0022 \u0022one\u0022\n    // -\u003E \u0022equal\u0022"
+    },
+    {
+      "id": "bf30095f-563d-4926-ab35-71d9983698aa",
+      "type": "markdown",
+      "source": "Listing 29: F# will refuse to compile code that applies \u0060areEqual\u0060 to\nvalues of different types"
+    },
+    {
+      "id": "2a430eee-bd14-424f-b6ac-90c72cfa7994",
+      "type": "code",
+      "language": "csharp",
+      "source": "areEqual 1 \u0022one\u0022 // error"
+    },
+    {
+      "id": "8c410aad-75c2-4d54-ba84-3070be933d1d",
+      "type": "markdown",
+      "source": "Listing 30: Making types explicit prevents automatic generalisation."
+    },
+    {
+      "id": "91e0a87b-5203-4fe3-b373-7271e38d6615",
+      "type": "code",
+      "language": "csharp",
+      "source": "let makeContact (org: string) (met: bool) (name: string) = (name, met, org)"
+    },
+    {
+      "id": "9d4a38c9-9911-42da-b7d3-ca468b7b3859",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n**Exercise 15** Run the code in lst.\u00A030. How has this affected the type\nof \u0060makeContact\u0060."
+    },
+    {
+      "id": "199decb4-4ec5-477a-b676-9101431aaa4d",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "79ba9b60-8a73-464c-866e-e48fb51dc5e7",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\nListing 31: A specialised version of makeContact for Prodrive\nTechnologies"
+    },
+    {
+      "id": "c4e0af4b-3368-4f3c-b21b-afa1ae60cbc6",
+      "type": "code",
+      "language": "csharp",
+      "source": "let makeProdriveContact = makeContact \u0022Prodrive Technologies\u0022"
+    },
+    {
+      "id": "79fe4770-3f3a-4e9f-b31e-d46d542f651a",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n**Exercise 16** Run the code in lst.\u00A031. What is the type?"
+    },
+    {
+      "id": "8eb6bc7c-6d7b-4a1e-b539-ae2ac4976aa8",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "d32e74dd-7d65-4966-a3f2-87a3cfb74dab",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\nListing 32: Using our specialised function"
+    },
+    {
+      "id": "4097e20f-8dc0-4e45-adf6-f5eb245130a0",
+      "type": "code",
+      "language": "csharp",
+      "source": "makeProdriveContact false \u0022Yuriy\u0022"
+    },
+    {
+      "id": "5db3dea6-343a-488e-aa8f-be27b722b929",
+      "type": "code",
+      "language": "csharp",
+      "source": "let makeMetProdriveContact = makeProdriveContact true\n\nmakeMetProdriveContact \u0022Arthur\u0022"
+    },
+    {
+      "id": "c18630e1-c797-461f-afb7-951dbacecbbc",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n**Exercise 17** Write a function, \u0060makeTrack\u0060 that constructs a tuple\nwith information about a track on a music album. It should accept the\nfollowing information as arguments:\n\n1.  album name\n2.  artist name\n3.  track title\n4.  duration in seconds"
+    },
+    {
+      "id": "baecac44-b515-4a4e-958d-18eb1ff61544",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "408adf31-b736-4c7c-b7e0-4c8df7981c75",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 18** Has your definition of \u0060makeTrack\u0060 been generalised\nautomatically? Is automatic generalisation desirable in this situation.\nIf not, provide an alternative definition that addresses this."
+    },
+    {
+      "id": "35d135da-b5d1-4ba7-9e2c-ab74189b728c",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "b93ac757-f0d4-472f-8f28-811eee2c379c",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 19** You just discovered the album \u201C7.6.9.6.\u201D by Spinvis.\nDefine a specialised version of \u0060makeTrack\u0060 for this album."
+    },
+    {
+      "id": "1eeeed3a-0eb9-4e49-a514-55f02874c48b",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "1dd71ee2-6ef6-49b5-a104-a9afb1cfedd1",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------\n\n------------------------------------------------------------------------\n\n**Exercise 20** In this exercise you will define a function\n\u0060trackExceedsThreeMin\u0060 to determine if is longer than 3 minutes. First\ncreate a more general version \u0060trackDurationExceeds\u0060, then partially\napply it to obtain the desired function."
+    },
+    {
+      "id": "9a4a878c-ee56-4d25-b675-3ea66dde14fc",
+      "type": "code",
+      "language": "csharp",
+      "source": "// your code here"
+    },
+    {
+      "id": "1be99a83-62fc-47e6-a595-8d00a8471ac3",
+      "type": "markdown",
+      "source": "------------------------------------------------------------------------"
+    }
+  ]
+}

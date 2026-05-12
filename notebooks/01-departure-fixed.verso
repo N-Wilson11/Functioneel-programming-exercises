@@ -55,7 +55,7 @@
       "id": "64f621e5-1959-411c-b2c9-8d2dd2d01338",
       "type": "code",
       "language": "csharp",
-      "source": "// your code here"
+      "source": "// We cannot tell"
     },
     {
       "id": "555331bb-03b1-4a60-98e9-70c49e0aa91a",
@@ -72,7 +72,7 @@
       "id": "f9c67116-7473-42c2-98e0-5b38a869afc9",
       "type": "code",
       "language": "csharp",
-      "source": "// your code here"
+      "source": "// Because it\u0027s a birthday card so you want to add 1 year to the age.\r\n//But I wouldn\u0027t accept because SOC is not used. I would name the method something with add or make another method and call it in SendCard"
     },
     {
       "id": "6931fca2-ad4e-4222-95a6-b3ce1ff99801",
@@ -87,7 +87,7 @@
       "outputs": [
         {
           "mimeType": "text/plain",
-          "content": "Hello world!m\r\n"
+          "content": "Hello world!\r\n"
         }
       ]
     },
@@ -100,7 +100,13 @@
       "id": "cca5af96-0969-4a50-bdbf-b907b894df81",
       "type": "code",
       "language": "csharp",
-      "source": "class Person {\n    private int _age;\n    public int Age { get =\u003E _age; }\n\n    private string _name;\n    public string Name { get =\u003E _name; }\n\n    public Person(string name, int age)\n    {\n        if (name.Length == 0)\n            throw new ArgumentOutOfRangeException(nameof(name),\n                                                  \u0022cannot be empty\u0022);\n        if (age \u003C 0)\n            throw new ArgumentOutOfRangeException(nameof(age),\n                                                  \u0022cannot be negative\u0022);\n        _name = name;\n        _age = age;\n    }\n}\n\nPerson SetAge(Person p, int age) {\n    if (age \u003C 0){\n        return p;\n    }\n    return new Person(p.Name, age);\n}\n\nvar p = new Person(\u0022Eleanor\u0022, 22);\nvar p2 = SetAge(p, 23);\nConsole.WriteLine($\u0022p.Age = {p.Age}\u0022)\nConsole.WriteLine($\u0022p2.Age = {p2.Age}\u0022)"
+      "source": "class Person {\n    private int _age;\n    public int Age { get =\u003E _age; }\n\n    private string _name;\n    public string Name { get =\u003E _name; }\n\n    public Person(string name, int age)\n    {\n        if (name.Length == 0)\n            throw new ArgumentOutOfRangeException(nameof(name),\n                                                  \u0022cannot be empty\u0022);\n        if (age \u003C 0)\n            throw new ArgumentOutOfRangeException(nameof(age),\n                                                  \u0022cannot be negative\u0022);\n        _name = name;\n        _age = age;\n    }\n}\n\nPerson SetAge(Person p, int age) {\n    if (age \u003C 0){\n        return p;\n    }\n    return new Person(p.Name, age);\n}\n\nvar p = new Person(\u0022Eleanor\u0022, 22);\nvar p2 = SetAge(p, 23);\nConsole.WriteLine($\u0022p.Age = {p.Age}\u0022);\nConsole.WriteLine($\u0022p2.Age = {p2.Age}\u0022);",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "p.Age = 22\r\np2.Age = 23\r\n"
+        }
+      ]
     },
     {
       "id": "ac60ad21-981b-4635-b374-efcb9fabcec2",
@@ -132,7 +138,7 @@
     {
       "id": "6c16b0d5-6821-474c-a0ea-c4fe6b633023",
       "type": "code",
-      "language": "csharp",
+      "language": "fsharp",
       "source": "let f x = x \u002B 1"
     },
     {
@@ -143,8 +149,14 @@
     {
       "id": "518621b7-d012-4a0a-af5f-1a244446d615",
       "type": "code",
-      "language": "csharp",
-      "source": "f 2"
+      "language": "fsharp",
+      "source": "f 2",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "3"
+        }
+      ]
     },
     {
       "id": "c09899ce-486b-4425-8a03-4e80635d1edf",
@@ -154,7 +166,7 @@
     {
       "id": "46f80673-50e0-4147-920e-dbe886431caa",
       "type": "code",
-      "language": "csharp",
+      "language": "fsharp",
       "source": "let add a b = a \u002B b"
     },
     {
@@ -165,8 +177,14 @@
     {
       "id": "e8f39470-87a5-4059-ab17-b0d792e31d1b",
       "type": "code",
-      "language": "csharp",
-      "source": "add 1 2 // 3"
+      "language": "fsharp",
+      "source": "add 1 2 // 3",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "3"
+        }
+      ]
     },
     {
       "id": "f7e7f188-de67-4d9f-93e7-d3bfe8da9f09",
@@ -176,8 +194,14 @@
     {
       "id": "566f3409-49bd-4195-9948-08ab213d19a6",
       "type": "code",
-      "language": "csharp",
-      "source": "// your code here"
+      "language": "fsharp",
+      "source": "add 1337 42 ",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "1379"
+        }
+      ]
     },
     {
       "id": "285a4ed0-7beb-4337-86e9-651ebcff82c4",
@@ -187,8 +211,14 @@
     {
       "id": "fffae3fd-f87f-486b-8b27-a2d5d26a245b",
       "type": "code",
-      "language": "csharp",
-      "source": "// your code here"
+      "language": "fsharp",
+      "source": "// your code here\r\nadd 1337 (6 * 7)",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "1379"
+        }
+      ]
     },
     {
       "id": "5654066e-5cfc-4c36-a5b4-b48314e656df",
@@ -221,13 +251,29 @@
       "id": "a580acd9-9bcf-42bf-bc96-588b9a02fb4e",
       "type": "code",
       "language": "csharp",
-      "source": "int Add3(int a, int b, int c)\n{\n    var sum = Add(Add(a,b),c);\n    \n    // Console.WriteLine(\u0022Result is {0}.\u0022, sum); // potentially\n    \n    return sum;\n}\nAdd3(1,2,3); // not 6!"
+      "source": "int Add3(int a, int b, int c)\n{\n    var sum = Add(Add(a,b),c);\n    \n    // Console.WriteLine(\u0022Result is {0}.\u0022, sum); // potentially\n    \n    return sum;\n}\nAdd3(1,2,3); // not 6!",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "(3,15): error CS0103: The name \u0027Add\u0027 does not exist in the current context\r\n(3,19): error CS0103: The name \u0027Add\u0027 does not exist in the current context",
+          "isError": true,
+          "errorName": "CompilationError"
+        }
+      ]
     },
     {
       "id": "a9a82a84-5b58-4505-966a-22d09267f397",
       "type": "code",
       "language": "csharp",
-      "source": "// your code here"
+      "source": "// your code here\r\nAdd3(1,2,3)",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "(2,1): error CS0103: The name \u0027Add3\u0027 does not exist in the current context",
+          "isError": true,
+          "errorName": "CompilationError"
+        }
+      ]
     },
     {
       "id": "29500a26-1691-40d1-ba74-c6775e0be61d",
@@ -238,7 +284,7 @@
       "id": "104a8fab-48f6-4b5d-8b39-1fb0eee32507",
       "type": "code",
       "language": "csharp",
-      "source": "// your code here"
+      "source": "// Won\u0027t change"
     },
     {
       "id": "5d347fd7-3232-4b0c-b38d-5188cc3a80f7",
@@ -248,7 +294,7 @@
     {
       "id": "aae821b0-0881-480a-839a-1ce93c4da443",
       "type": "code",
-      "language": "csharp",
+      "language": "fsharp",
       "source": "// remember that add was defined earlier\nlet add3 a b c =\n    let sum = add (add a b) c\n    Console.WriteLine(\u0022Result is {0}.\u0022, sum)\n    sum"
     },
     {
@@ -281,7 +327,7 @@
     {
       "id": "21530d7c-bc86-441d-b5c9-c0627abf5498",
       "type": "code",
-      "language": "csharp",
+      "language": "fsharp",
       "source": "let randomNumberSeeded max =\n    let r = System.Random(1337)\n    r.Next 10"
     },
     {
@@ -292,14 +338,24 @@
     {
       "id": "4b7e7f7e-0e50-4019-83a9-3c0b6b07ea28",
       "type": "code",
-      "language": "csharp",
+      "language": "fsharp",
       "source": "let randomNumberSeededLog max =\n    let r = System.Random(1337)\n    printfn \u0022Bleep... Bloop... Generating number\u0022\n    r.Next 10"
     },
     {
       "id": "4611b7a3-3b84-48c7-a9d6-5a90994f787a",
       "type": "code",
-      "language": "csharp",
-      "source": "// your code here"
+      "language": "fsharp",
+      "source": "// 18 is not pure because the random. Same input might give different output\r\n// 19 also not\r\n//\r\nrandomNumberSeededLog 12",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "Bleep... Bloop... Generating number\r\n"
+        },
+        {
+          "mimeType": "text/plain",
+          "content": "2"
+        }
+      ]
     },
     {
       "id": "a3f6663a-94b0-477c-ad54-059cdc27743c",
@@ -316,7 +372,7 @@
       "id": "89f1e1e4-24d0-4dca-aa45-1e1d9bfba9a3",
       "type": "code",
       "language": "csharp",
-      "source": "// your code here"
+      "source": "// Description because it has a setter"
     },
     {
       "id": "02ce6278-8b1a-4a43-ac1e-e8e3091c1354",
@@ -333,7 +389,15 @@
       "id": "4ed2a49d-d0c1-48ae-bc2d-828e0f5b3ff5",
       "type": "code",
       "language": "csharp",
-      "source": "// your code here"
+      "source": "// your code here\r\n",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "(2,1): error CS0103: The name \u0027Get\u0027 does not exist in the current context",
+          "isError": true,
+          "errorName": "CompilationError"
+        }
+      ]
     },
     {
       "id": "0e790655-1323-47ef-8acf-31cdaa9bace8",
@@ -343,8 +407,14 @@
     {
       "id": "bf4a3a1f-c642-42eb-996c-9d3082207c28",
       "type": "code",
-      "language": "csharp",
-      "source": "// your code here"
+      "language": "fsharp",
+      "source": "// your code here\r\nlet mult a b = a * b\r\nmult 5 3",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "15"
+        }
+      ]
     },
     {
       "id": "8d733921-458e-4961-98f3-535b7f691cab",
@@ -354,8 +424,14 @@
     {
       "id": "12e5d7d5-72b7-40b5-8a3d-58c06b18c82f",
       "type": "code",
-      "language": "csharp",
-      "source": "// your code here"
+      "language": "fsharp",
+      "source": "// your code here\r\nlet mult3 a b c = mult (mult a b) c\r\nmult3 5 2 3",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "30"
+        }
+      ]
     },
     {
       "id": "6a6c7889-b9a9-4711-b611-e280f7bbd32b",
